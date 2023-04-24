@@ -122,7 +122,7 @@ for(let todo of todos){
 
 //forEach, map, filter
 todos.forEach(function(todo){
-    //console.log(todo.text)
+    console.log(todo.text)
 })
 const todotext =todos.map(function(todotext){
    return todotext.text
