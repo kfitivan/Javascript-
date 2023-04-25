@@ -17,10 +17,10 @@ const name ="ivan";
 const isCool = true;
 const y =undefined;
 const ratings =40.9;
-const x=null;
+const p=null;
 let z;
 
-console.log(typeof x)
+console.log(typeof y)
 
 //concetnation
 
@@ -140,3 +140,58 @@ while(i>5){
     
 }
 // tomorow 25/4/2023... Conditionals.
+
+const x =20;
+
+    if(x === 25){
+        console.log(x)
+    } else{
+        console.log('x is greater than 20')
+    }
+// if else
+const t =10
+    if(t >= 10){
+        console.log(t)
+
+    }else if(t <10){
+        console.log('t is greater than 10')
+    
+    }else{
+        console.log('t is equal to 10')
+    }
+
+// instead of nesting if statements, we use && operator or || operator
+
+const r=10
+const w=25
+if(r>12 && w===12){
+    console.log(r)
+
+}
+
+if(r<=10 || w<=25){
+    console.log('r is less or eaqual to 10')
+}
+
+// functions
+
+function addNums(Num1, Num2){
+    return Num1 + Num2
+
+}
+console.log(addNums(7,8))
+
+//OOP using a constractor function
+//constructor function
+
+function Person(FirstName, LastName, DOB){
+    this.FirstName = FirstName
+    this.LastName = LastName
+    this.DOB = new Date(DOB)
+}
+//instantiate the object
+const person1 = new Person('Ivan', 'Tweheyo', '12-09-1990')
+const person2 = new Person('john', 'deo', '16-09-1980')
+console.log(person1)
+
+console.log(person2.DOB.getFullYear())
