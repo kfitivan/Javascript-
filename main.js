@@ -194,6 +194,7 @@ const person1 = new Person('Ivan', 'Tweheyo', '12-09-1990')
 const person2 = new Person('john', 'deo', '16-09-1980')
 console.log(person1)
 
+<<<<<<< HEAD
 //console.log(person2.get`${FirstName} ${LastName}`)
 /*using prototype in a function
 Person.prototype.getFullYear = function(){
@@ -288,3 +289,6 @@ class PersonX{
            emailInput.value = ''
         }
     
+=======
+console.log(person2.DOB.getFullYear())
+>>>>>>> a1cc2035871cb84c627f710482f73d9966c50ade
