@@ -17,10 +17,10 @@ const name ="ivan";
 const isCool = true;
 const y =undefined;
 const ratings =40.9;
-const x=null;
+const p=null;
 let z;
 
-console.log(typeof x)
+console.log(typeof y)
 
 //concetnation
 
@@ -140,3 +140,151 @@ while(i>5){
     
 }
 // tomorow 25/4/2023... Conditionals.
+
+const x =20;
+
+    if(x === 25){
+        console.log(x)
+    } else{
+        console.log('x is greater than 20')
+    }
+// if else
+const t =10
+    if(t >= 10){
+        console.log(t)
+
+    }else if(t <10){
+        console.log('t is greater than 10')
+    
+    }else{
+        console.log('t is equal to 10')
+    }
+
+// instead of nesting if statements, we use && operator or || operator
+
+const r=10
+const w=25
+if(r>12 && w===12){
+    console.log(r)
+
+}
+
+if(r<=10 || w<=25){
+    console.log('r is less or eaqual to 10')
+}
+
+// functions
+
+function addNums(Num1, Num2){
+    return Num1 + Num2
+
+}
+console.log(addNums(7,8))
+
+//OOP using a constractor function
+//constructor function
+
+function Person(FirstName, LastName, DOB){
+    this.FirstName = FirstName
+    this.LastName = LastName
+    this.DOB = new Date(DOB)
+}
+//instantiate the object
+const person1 = new Person('Ivan', 'Tweheyo', '12-09-1990')
+const person2 = new Person('john', 'deo', '16-09-1980')
+console.log(person1)
+
+//console.log(person2.get`${FirstName} ${LastName}`)
+/*using prototype in a function
+Person.prototype.getFullYear = function(){
+    return this.DOB.getFullYear()
+}
+Person.prototype.getFullName() = function(){
+    return `${this.FirstName} ${this.LastName}`
+}
+*/
+
+//Class. 
+class PersonX{
+    constructor(firstName, lastName, age){
+    this.firstName = firstName
+    this.lastName = lastName
+    this.age = age
+    }
+    getFullName(){
+        return `${this.firstName} ${this.lastName} ${this.age}`
+    }
+    getFullYear(){
+        return this.DOB.getFullYear()
+    }
+}
+    const person3 = new PersonX('mark', 'David', '12-09-1890')
+    const person4 = new PersonX('Trevor', 'Noah', '16-09-1970')
+    console.log(person3)
+    console.log(person4.getFullName())
+
+    //DOM Document Object Model
+    //selecting elements 
+    //Single element
+
+    console.log(document.getElementById('#my-form')) //grabs element by id
+    console.log(document.querySelector('.container')) // Jquerry library helps to grab elements by class name
+   
+    //multiple elements
+    console.log(document.querySelectorAll('.items')) //this helps to select more than one element like lists
+
+    //looping through items
+
+    const items = document.querySelectorAll('.items')
+    items.forEach(items => console.log(items))
+
+    //removing elements from the list
+    const ul = document.querySelector('.items')
+        //ul.remove() //removes all elemnts
+       // ul.lastElementChild.remove() //removes last element
+
+    //changing content of elements
+    // ul.firstElementChild.textContent ='Hello'
+    // ul.children[1].innerText ='Ivan' //accessing second element by index
+    // ul.lastElementChild.innerHTML ='<h1>Hi<h1/>'//changing last element Html
+
+    //adding Event listeners to buttons and elements
+
+    const btn = document .querySelector('.btn')
+
+    btn.addEventListener('click', (e) =>{
+        e.preventDefault()
+        document.querySelector('#my-form').style.backgroundColor ='CCC'
+        //document.querySelector('body').classList.add('bg-dark')
+
+    })
+
+    //activating the form elements
+    const myForm = document.getElementById('my-form')
+    const nameInput = document.getElementById('#name')
+    const emailInput = document.getElementById('#email')
+    const msg = document.querySelector('.msg')
+    const userList = document.getElementById('#users')
+        
+    myForm.addEventListener('submit', onSubmit)
+
+    function onSubmit(e){
+        e.preventDefault()
+
+        if(nameInput === '' || emailInput === ''){
+         msg.classList.add('error')
+         msg.innerHTML = 'Please fill in the feilds' //error validation message
+
+         setTimeout(() => msg.remove(), 3000) //time to clear error message after 3 seconds
+        }else {
+            console.log('Succes')
+            //append elements to form upon login
+            const li = document.createElement('li')
+            li.textContent = `${nameInput.value} ${emailInput.value}`
+            userList.appendChild(li)
+           }
+           //clear fields
+           nameInput.value = ''
+           emailInput.value = ''
+        }
+    
